@@ -13,7 +13,7 @@ fn main() {
     println!("2022 by Vladimir Medeyko");
     println!("CC0 licensed");
     const NN: usize = N * N; // Полное количество клеток
-    let mut board: [usize; NN] = [0; NN]; // Игровое поле
+    let mut board: [u32; NN ] = [0; NN]; // Игровое поле
                                           // Лишнее заполнение нулями, но нет смысла прибегать к unsafe
                                           // Ручная реализация двухмерного массива в даном случае удобнее
     let mut valid_count = 0; // Счётчик валидных позиций
@@ -57,7 +57,7 @@ fn main() {
 }
 
 /// Проверка того, что в позиции brd есть какой-либо полный ряд фигур fig
-fn is_fill<const N: usize, const NN: usize>(brd: &[usize; NN], fig: usize) -> bool {
+fn is_fill<const N: usize, const NN: usize>(brd: &[u32; NN], fig: u32) -> bool {
     for i in 0..N {
         if brd[i * N .. (i + 1) * N].iter().filter(|&x| *x == fig).count() == N // Горизонтальные
             || brd.iter().skip(i).step_by(N).filter(|&x| *x == fig).count() == N // Вертикальные
@@ -81,12 +81,12 @@ fn is_fill<const N: usize, const NN: usize>(brd: &[usize; NN], fig: usize) -> bo
 }
 
 /// Подсчёт количества фигур fig в позиции brd
-fn calc_figs<const NN: usize>(brd: &[usize; NN], fig: usize) -> usize {
+fn calc_figs<const NN: usize>(brd: &[u32; NN], fig: u32) -> usize {
     brd.iter().filter(|&x| *x == fig).count()
 }
 
 /// Отрисовка раскладки позиции brd в текстовую строку
-fn print_board<const N: usize, const NN: usize>(brd: &[usize; NN]) -> String {
+fn print_board<const N: usize, const NN: usize>(brd: &[u32; NN]) -> String {
     let mut result = String::new();
     for j in 0..N {
         for i in 0..N {
@@ -120,7 +120,7 @@ fn print_board<const N: usize, const NN: usize>(brd: &[usize; NN]) -> String {
 
 /// Генерация следующей позиции в brd
 /// Возвращает false если позицмя была последней
-fn next_board<const NN: usize>(brd: &mut [usize; NN]) -> bool {
+fn next_board<const NN: usize>(brd: &mut [u32; NN]) -> bool {
     let mut k = NN - 1;
     while k > 0 && brd[k] == 2 { // Троичная арифметика
         k -= 1;
