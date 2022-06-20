@@ -1,5 +1,5 @@
 [package]
-name = "tic_tc_toe_fields"
+name = "tic_tac_toe_fields"
 version = "0.1.0"
 edition = "2021"
 
