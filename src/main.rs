@@ -14,8 +14,7 @@ fn main() {
     println!("CC0 licensed");
     const NN: usize = N * N; // Полное количество клеток
     let mut board: [u32; NN ] = [0; NN]; // Игровое поле
-                                          // Лишнее заполнение нулями, но нет смысла прибегать к unsafe
-                                          // Ручная реализация двухмерного массива в даном случае удобнее
+                                         // Ручная реализация двухмерного массива в даном случае удобнее
     let mut valid_count = 0; // Счётчик валидных позиций
     let mut file = File::create(OUT_FILE_NAME) // Файл со списком позиций
         .expect(&format!("Can't create '{}' file", OUT_FILE_NAME));
