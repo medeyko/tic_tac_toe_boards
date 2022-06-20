@@ -51,7 +51,7 @@ fn main() {
     println!("Valid boards #: {}", valid_count);
     if N == 3 {
         assert_eq!(valid_count, 5478); // Правильное количество для поля 3х3 5478
-                                      // https://books.google.ru/books?id=prXDDgAAQBAJ&pg=PA21&dq=tic+tac+toe+number+of+valid+positions
+                                       // https://books.google.ru/books?id=prXDDgAAQBAJ&pg=PA21&dq=tic+tac+toe+number+of+valid+positions
     }
 }
 
