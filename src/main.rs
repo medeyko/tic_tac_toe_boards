@@ -70,7 +70,7 @@ fn is_fill<const N: usize, const NN: usize>(brd: &[u32; NN], fig: u32) -> bool {
             prim += 1; // Основная диагональ
         };
         if brd[j * N + N - 1 - j] == fig {
-            sec += 1; // второстепенная диагональ                                                         		
+            sec += 1; // Второстепенная диагональ                                                         		
         };
     }
     if prim == N || sec == N {
