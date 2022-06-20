@@ -48,7 +48,7 @@ fn main() {
             writeln!(file).expect("Output error (ln)");
         }
         next_board::<NN>(&mut board)
-    } {}
+    } {} // Цикл как бы 'until'
     println!("Valid boards #: {}", valid_count);
     if N == 3 {
         assert_eq!(valid_count, 5478); // Правильное количество для поля 3х3 5478
