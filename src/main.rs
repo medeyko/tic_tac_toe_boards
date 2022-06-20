@@ -37,11 +37,11 @@ fn main() {
             writeln!(file, "{}", &board_layout).expect("Output error (board)");
             // println!("valid board");
             valid_count += 1;
-            if x_fill {
+            if x_fill { // x выиграл
                 writeln!(file, "x wins").expect("Output error (x)");
-            } else if o_fill {
+            } else if o_fill { // o выиграл
                 writeln!(file, "o wins").expect("Output error (o)");
-            } else if x_count + o_count == NN {
+            } else if x_count + o_count == NN { // Ничья
                 writeln!(file, "draw").expect("Output error (draw)");
             }
             writeln!(file).expect("Output error (ln)");
